@@ -11,9 +11,9 @@ const port = 5000;
 
 // Настройка CORS
 app.use(cors({
-    origin: 'https://cy40407.tw1.ru', // Разрешить только с этого источника
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Разрешить только эти методы
-    allowedHeaders: ['Content-Type', 'Authorization'] // Разрешить только эти заголовки
+    origin: '*', // Разрешить все источники
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Разрешить эти методы
+    allowedHeaders: ['Content-Type', 'Authorization','ngrok-skip-browser-warning'] // Разрешить эти заголовки
 }));
 
 app.use(bodyParser.json());
