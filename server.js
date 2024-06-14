@@ -9,7 +9,13 @@ const productRoutes = require('./routes/productRoutes');
 const app = express();
 const port = 5000;
 
-app.use(cors());
+// Настройка CORS
+app.use(cors({
+    origin: 'https://cy40407.tw1.ru', // Разрешить только с этого источника
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Разрешить только эти методы
+    allowedHeaders: ['Content-Type', 'Authorization'] // Разрешить только эти заголовки
+}));
+
 app.use(bodyParser.json());
 
 app.use('/auth', authRoutes);
